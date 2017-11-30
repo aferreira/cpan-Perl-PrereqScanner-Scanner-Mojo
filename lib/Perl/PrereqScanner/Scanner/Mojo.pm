@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 package Perl::PrereqScanner::Scanner::Mojo;
+
 # ABSTRACT: Scan for modules loaded with Mojo::Base
 
 use Moose;
@@ -14,8 +15,10 @@ sub scan_for_prereqs {
     # regular use, require, and no
     my $includes = $ppi_doc->find('Statement::Include') || [];
     for my $node (@$includes) {
+
         # inheritance
         if ( $node->module eq 'Mojo::Base' ) {
+
             # skip arguments like '-base', '-strict', '-role', '-signatures'
             my @meat = grep {
                      $_->isa('PPI::Token::QuoteLike::Words')
@@ -26,7 +29,7 @@ sub scan_for_prereqs {
             my @args = map { $self->_q_contents($_) } @meat;
 
             while (@args) {
-                my $module = shift @args;
+                my $module  = shift @args;
                 my $version = '0';
                 $req->add_minimum( $module => $version );
             }
