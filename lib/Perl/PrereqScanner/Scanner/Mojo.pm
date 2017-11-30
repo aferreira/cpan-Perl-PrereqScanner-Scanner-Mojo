@@ -42,7 +42,16 @@ sub scan_for_prereqs {
 
 1;
 
-=encoding UTF-8
+=encoding utf8
+
+=head1 SYNOPSIS
+
+    use Perl::PrereqScanner;
+    my $scanner = Perl::PrereqScanner->new( { extra_scanners => 'Mojo' } );
+    my $prereqs = $scanner->scan_ppi_document($ppi_doc);
+    my $prereqs = $scanner->scan_file($file_path);
+    my $prereqs = $scanner->scan_string($perl_code);
+    my $prereqs = $scanner->scan_module($module_name);
 
 =head1 DESCRIPTION
 
