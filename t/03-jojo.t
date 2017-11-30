@@ -1,5 +1,5 @@
 
-use 5.018;
+use 5.010;
 use Test::More 0.88;
 
 use Perl::PrereqScanner;

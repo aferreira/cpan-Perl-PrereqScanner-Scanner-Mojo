@@ -1,5 +1,5 @@
 
-use 5.018;
+use 5.010;
 use Test::More 0.88;
 
 require_ok('Perl::PrereqScanner::Scanner::Mojo');
