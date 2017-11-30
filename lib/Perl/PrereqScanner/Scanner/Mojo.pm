@@ -1,4 +1,5 @@
 
+use 5.010;
 use strict;
 use warnings;
 
@@ -12,12 +13,14 @@ with 'Perl::PrereqScanner::Scanner';
 sub scan_for_prereqs {
     my ( $self, $ppi_doc, $req ) = @_;
 
+    state $IS_BASE = { 'Mojo::Base' => 1, 'Jojo::Base' => 1 };
+
     # regular use, require, and no
     my $includes = $ppi_doc->find('Statement::Include') || [];
     for my $node (@$includes) {
 
         # inheritance
-        if ( $node->module eq 'Mojo::Base' ) {
+        if ( $IS_BASE->{ $node->module } ) {
 
             # skip arguments like '-base', '-strict', '-role', '-signatures'
             my @meat = grep {
