@@ -31,7 +31,7 @@ my $rawr = Tiger->new(stripes => 38, weight => 250);
 say $rawr->tap(sub { $_->friend->name('Tacgnol') })->weight;
 
 PERL
-        expected => { 'Cat' => '0', 'Mojo::Base' => 0 },
+        expected => { 'Cat' => '0', 'Mojo::Base' => '0' },
         what     => 'Mojo::Base synopsis',
     },
     {
@@ -56,9 +56,9 @@ PERL
             'Mojolicious::Command'  => '0',
             'Mojolicious::Commands' => '0',
             'Mojolicious::Plugin'   => '0',
-            'Mojo::Base'            => 0,
-            'Kevin::Commands::Util' => 0,
-            'Mojo::Util'            => 0,
+            'Mojo::Base'            => '0',
+            'Kevin::Commands::Util' => '0',
+            'Mojo::Util'            => '0',
         },
         what => 'Kevin::Commands sample',
     },

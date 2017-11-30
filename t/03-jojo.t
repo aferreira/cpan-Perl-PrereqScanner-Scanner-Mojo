@@ -33,7 +33,7 @@ my $rawr = Tiger->new(stripes => 38, weight => 250);
 say $rawr->tap(sub { $_->friend->name('Tacgnol') })->weight;
 
 PERL
-        expected => { 'Cat' => '0', 'Jojo::Base' => 0 },
+        expected => { 'Cat' => '0', 'Jojo::Base' => '0' },
         what     => 'Jojo::Base synopsis',
     },
 );
