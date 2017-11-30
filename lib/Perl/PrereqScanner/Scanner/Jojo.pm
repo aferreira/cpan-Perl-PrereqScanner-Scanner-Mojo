@@ -27,6 +27,6 @@ sub _is_base_module { $_[1] eq 'Jojo::Base' }
 
 =head1 DESCRIPTION
 
-This scanner will look for dependencies from the L<Mojo::Base> module:
+This scanner will look for dependencies from the L<Jojo::Base> module:
 
     use Jojo::Base 'SomeBaseClass';
