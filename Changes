@@ -3,6 +3,11 @@ Release history for Perl-PrereqScanner-Scanner-Mojo
 
 {{$NEXT}}
 
+v0.2     2017-11-30 09:50:37-08:00 America/Los_Angeles
+
+      - Split Jojo::Base detection to its own scanner
+      - A few tests
+
 v0.1     2017-11-29 19:41:27-08:00 America/Los_Angeles
 
       - Initial version
