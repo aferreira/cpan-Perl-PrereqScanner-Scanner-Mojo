@@ -47,7 +47,7 @@ sub scan_for_prereqs {
 =head1 SYNOPSIS
 
     use Perl::PrereqScanner;
-    my $scanner = Perl::PrereqScanner->new( { extra_scanners => 'Mojo' } );
+    my $scanner = Perl::PrereqScanner->new( { extra_scanners => ['Mojo'] } );
     my $prereqs = $scanner->scan_ppi_document($ppi_doc);
     my $prereqs = $scanner->scan_file($file_path);
     my $prereqs = $scanner->scan_string($perl_code);
