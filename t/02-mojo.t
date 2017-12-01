@@ -62,6 +62,11 @@ PERL
         },
         what => 'Kevin::Commands sample',
     },
+    {
+        perl_code => 'use Mojo::Base ()',
+        expected  => { 'Mojo::Base' => '0' },
+        what      => 'use Mojo::Base ()',
+    },
 );
 
 for my $t (@TESTS) {
