@@ -67,6 +67,18 @@ PERL
         expected  => { 'Mojo::Base' => '0' },
         what      => 'use Mojo::Base ()',
     },
+    {
+        perl_code => q{use Mojo::Base 'SomeBaseClass'},
+        expected  => { 'Mojo::Base' => '0', 'SomeBaseClass' => '0' },
+        what      => q{use Mojo::Base 'SomeBaseClass'},
+    },
+    {
+        perl_code => q{use Mojo::Base "SomeBaseClass"},
+        expected  => { 'Mojo::Base' => '0', 'SomeBaseClass' => '0' },
+        what      => q{use Mojo::Base "SomeBaseClass"},
+    },
+
+    # TODO use Mojo::Base ('SomeBaseClass')
 );
 
 for my $t (@TESTS) {
