@@ -24,7 +24,6 @@ sub scan_for_prereqs {
             my @meat = grep {
                      $_->isa('PPI::Token::QuoteLike::Words')
                   || $_->isa('PPI::Token::Quote')
-                  || $_->isa('PPI::Token::Number')
             } $node->arguments;
 
             my @args = map { $self->_q_contents($_) } @meat;
