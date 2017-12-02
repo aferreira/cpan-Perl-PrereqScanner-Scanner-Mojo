@@ -3,6 +3,8 @@ Release history for Perl-PrereqScanner-Scanner-Mojo
 
 {{$NEXT}}
 
+      - Use PPIx::Literal to parse "use" arguments
+
 v0.2     2017-11-30 09:50:37-08:00 America/Los_Angeles
 
       - Split Jojo::Base detection to its own scanner

@@ -10,6 +10,8 @@ package Perl::PrereqScanner::Scanner::Mojo;
 use Moose;
 with 'Perl::PrereqScanner::Scanner';
 
+use PPIx::Literal;
+
 sub scan_for_prereqs {
     my ( $self, $ppi_doc, $req ) = @_;
 
@@ -20,15 +22,12 @@ sub scan_for_prereqs {
         # inheritance
         if ( $self->_is_base_module( $node->module ) ) {
 
+            my @args = PPIx::Literal->convert( $node->arguments );
+
             # skip arguments like '-base', '-strict', '-role', '-signatures'
-            my @meat = grep {
-                     $_->isa('PPI::Token::QuoteLike::Words')
-                  || $_->isa('PPI::Token::Quote')
-            } $node->arguments;
+            @args = grep { !ref && !/^-/ } @args;
 
-            my @args = map { $self->_q_contents($_) } @meat;
-
-            while (@args) {
+            if (@args) {
                 my $module  = shift @args;
                 my $version = '0';
                 $req->add_minimum( $module => $version );
