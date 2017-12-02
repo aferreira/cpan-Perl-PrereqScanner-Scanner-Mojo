@@ -3,6 +3,8 @@ Release history for Perl-PrereqScanner-Scanner-Mojo
 
 {{$NEXT}}
 
+v0.3     2017-12-01 17:53:47-08:00 America/Los_Angeles
+
       - Use PPIx::Literal to parse "use" arguments
 
 v0.2     2017-11-30 09:50:37-08:00 America/Los_Angeles
