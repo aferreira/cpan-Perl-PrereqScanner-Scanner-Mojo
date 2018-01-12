@@ -12,6 +12,8 @@ extends 'Perl::PrereqScanner::Scanner::Mojo';
 
 sub _is_base_module { $_[1] eq 'Jojo::Base' }
 
+no Moose;
+
 1;
 
 =encoding utf8
